@@ -1,17 +1,17 @@
 {% set name = "pytest-localstack" %}
-{% set version = "0.4.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 91be109a98f3737e10b0b1de8f0cf48f30abee878a77099862fad2bed6de689c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 44ee795ff162085b6f5c51abcdb40687b36804a9ca10043629e3358343059ca3
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -38,9 +38,9 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Pytest plugin for AWS integration tests"
-  doc_url: "https://pypi.org/project/pytest-localstack/"
-  dev_url: "https://github.com/mintel/pytest-localstack"
+  summary: Pytest plugin for AWS integration tests
+  doc_url: https://pypi.org/project/pytest-localstack/
+  dev_url: https://github.com/mintel/pytest-localstack
 
 extra:
   recipe-maintainers:
